@@ -1,0 +1,7 @@
+button {
+    width: 225px;
+}
+
+.button-active {
+    background-color: #BB000E;
+}

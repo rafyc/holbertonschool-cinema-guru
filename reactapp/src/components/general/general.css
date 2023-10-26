@@ -1,13 +1,24 @@
+
+
 body, html {
     font-family: Roboto, Helvetica, sans-serif;
     font-weight: 400;
     line-height: 16px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
+
+input, select, textarea, button{
+    font-family:inherit;
+    font-size: 16px;
+}
+
 
 input[type=text] {
     border: none;
     border-bottom: 1px solid #BB000E;
-    ;
+    width: 354px;
   }
 
   textarea:focus, input:focus{
@@ -21,7 +32,9 @@ input[type=text] {
 
 [class^='input-'] {
     text-align: left;
-    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0px;
   }
 
 label[for^='label-select-'] {
@@ -31,4 +44,67 @@ label[for^='label-select-'] {
 [id^='select-'] {
     border: none;
     border-bottom: 1px solid #BB000E;
+}
+
+button {
+    background-color: #E31C25;
+    color: white;
+    border: none;
+    padding: 15px 0px;
+    transition: all 0.3s ease-in-out;
+}
+
+button.small {
+    background-color: #E31C25;
+    color: white;
+    border: none;
+    padding: 7px 0px;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #BB000E;
+    cursor: pointer;
+
+}
+
+[class^='button-'] svg {
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+
+.search-input {
+    background-color: #2C2C2C;
+    width: 535px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search-input ::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    transition: all .3s;
+}
+
+.search-input input {
+    background-color: #2C2C2C;
+    color: white;
+    border: none;
+    padding: 6px;
+    width: 87%;
+}
+
+.search-input svg {
+    color: rgba(255, 255, 255, 0.6);
+    padding-left: 16px;
+    transition: all .3s;
+}
+
+.search-input:hover svg,
+.search-input:hover ::placeholder {
+    color: white;
+    transform: color 0.2s ease-in-out;}
+
+.search-input:focus-within svg {
+    color: white;
 }

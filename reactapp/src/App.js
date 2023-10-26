@@ -1,17 +1,44 @@
 import './App.css';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from '@fortawesome/free-solid-svg-icons'
-import Input from './components/general/Input';
-import SelectInput from './components/general/SelectInput';
-import Button from './components/general/Button';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import Authentication from './routes/auth/Authentication';
+import Login from './routes/auth/Login';
 
 function App() {
+
   library.add(fas)
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userUsername, setUserUsername] = useState('');
+
+  useEffect(() => {
+    const fetchDatas = async () => {
+      try {
+        const token = localStorage.getItem('accessToken');
+        console.log(token);
+        const response = await axios.post('/api/auth/', {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        setIsLoggedIn(true)
+        setUserUsername(response.data.user)
+      }
+      catch (err) {
+        console.error(err)
+      }
+    }
+    fetchDatas();
+  }, [])
+
+
   return (
     <div className="App">
-      <Input type='text' className='lolo' value='' label='User name:' icon='user' />
-      <SelectInput label='Test' options={['lolo', 'lala', 'lili']} className='lala' value='choose' ></SelectInput>
-      <Button label='Click Me' className='mybutton' onClick={() => { }} icon='user'></Button>
+
+      <Authentication />
+      <Login />
     </div>
   );
 }

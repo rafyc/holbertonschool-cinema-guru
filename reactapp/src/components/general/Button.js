@@ -1,14 +1,15 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import './general.css'
 
-const Button = ({ label, className, onClick, icon }) => {
+const Button = ({ label, className, onClick, icon, size }) => {
   return (
     <button
-      className={className}
+      className={`button-${className} ${size}`}
       type='button'
-      onclick={onClick}
-      icon={icon}>
+      onClick={onClick}>
+      {icon && <FontAwesomeIcon icon={icon} />}
       {label}
     </button>
   )

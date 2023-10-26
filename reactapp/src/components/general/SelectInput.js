@@ -17,7 +17,7 @@ const SelectInput = ({ label, options, className, value, setValue }) => {
       <label htmlFor={`label-select-${className}`}>{label}:</label>
       <select
         name={className}
-        id={`select-${className}`}
+        id={`label-select-${className}`}
         value={value}
         onChange={handleSelect}>
         {optionsToSelect}
