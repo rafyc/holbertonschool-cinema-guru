@@ -10,6 +10,7 @@ const Input = ({ label, type, className, value, setValue, icon, inputAttributes 
     SetInputValue(e.target.value)
     setValue(e.target.value)
   }
+
   return (
     <>
       <div className={`input-${className}`}>

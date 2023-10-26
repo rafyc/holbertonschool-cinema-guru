@@ -21,6 +21,12 @@ input[type=text] {
     width: 354px;
   }
 
+input[type=password] {
+    border: none;
+    border-bottom: 1px solid #BB000E;
+    width: 354px;
+}
+
   textarea:focus, input:focus{
     outline: none;
 }
@@ -34,7 +40,7 @@ input[type=text] {
     text-align: left;
     display: flex;
     justify-content: center;
-    padding: 40px 0px;
+    padding: 0px 0px 45px 0px;
   }
 
 label[for^='label-select-'] {
@@ -60,6 +66,7 @@ button.small {
     border: none;
     padding: 7px 0px;
     transition: all 0.3s ease-in-out;
+    width: 104px;
 }
 
 button:hover {
@@ -72,6 +79,10 @@ button:hover {
     margin-right: 8px;
     margin-left: 8px;
   }
+
+[class^='button-icon-'].small {
+    padding-right: 15px;
+}
 
 .search-input {
     background-color: #2C2C2C;

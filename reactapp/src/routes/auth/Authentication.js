@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './auth.css'
 import Button from '../../components/general/Button';
+import Register from './Register';
+import Login from './Login';
 
 const Authentication = ({ setIsLoggedIn, setUserUsername }) => {
 
@@ -12,6 +14,7 @@ const Authentication = ({ setIsLoggedIn, setUserUsername }) => {
     <>
       <Button label='Sign In' className={_switch ? 'active' : 'signIn'} onClick={() => { setSwitch(true) }} />
       <Button label='Log In' className={!_switch ? 'active' : 'signIn'} onClick={() => { setSwitch(false) }} />
+      {_switch ? <Register /> : <Login />}
     </>
   )
 

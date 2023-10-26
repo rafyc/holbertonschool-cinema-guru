@@ -4,7 +4,6 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Authentication from './routes/auth/Authentication';
-import Login from './routes/auth/Login';
 
 function App() {
 
@@ -36,9 +35,7 @@ function App() {
 
   return (
     <div className="App">
-
-      <Authentication />
-      <Login />
+      <Authentication setIsLoggedIn={isLoggedIn} setUserUsername={userUsername} />
     </div>
   );
 }

@@ -6,7 +6,7 @@ import './general.css'
 const Button = ({ label, className, onClick, icon, size }) => {
   return (
     <button
-      className={`button-${className} ${size}`}
+      className={icon ? `button-icon-${className} ${size}` : `button-${className} ${size}`}
       type='button'
       onClick={onClick}>
       {icon && <FontAwesomeIcon icon={icon} />}
